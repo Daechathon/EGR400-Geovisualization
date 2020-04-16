@@ -7,7 +7,7 @@ set up process in order to use the program and show you how to implement geovisu
 
 ## Table of Contents
 1. Getting Started
-   - Prequisites [Link](
+   - Prequisites [Link](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisites)
    - Installation [Link](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#installing)
    - ...
 
