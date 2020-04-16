@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>UI Support &mdash; Asyncing Ship&#39;s Geovisualization 0.0.1 documentation</title>
+  <title>Input/Output Verification &mdash; Asyncing Ship&#39;s Geovisualization 0.0.1 documentation</title>
   
 
   
@@ -35,8 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input/Output Verification" href="input-output.html" />
-    <link rel="prev" title="Mapping" href="mapping.html" /> 
+    <link rel="prev" title="UI Support" href="testing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,12 +84,10 @@
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setting Up Geovisualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="building.html">Building Your Geovisualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">UI Support</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#something-to-think-about">Something to think about</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-asg-to">Getting ASG to</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">UI Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Input/Output Verification</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="input-output.html">Input/Output Verification</a></li>
 </ul>
 
             
@@ -136,13 +133,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>UI Support</li>
+      <li>Input/Output Verification</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/testing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/input-output.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -155,17 +152,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ui-support">
-<h1>UI Support<a class="headerlink" href="#ui-support" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="something-to-think-about">
-<h2>Something to think about<a class="headerlink" href="#something-to-think-about" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-new-content admonition">
-<p class="admonition-title">New Content</p>
-<p>still loading…</p>
+  <div class="section" id="input-output-verification">
+<h1>Input/Output Verification<a class="headerlink" href="#input-output-verification" title="Permalink to this headline">¶</a></h1>
+<dl>
+<dt>def as_chan(create_chan):</dt><dd><p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">Decorator</span> <span class="pre">which</span> <span class="pre">creates</span> <span class="pre">channel</span> <span class="pre">and</span> <span class="pre">coroutine.</span>
+<span class="pre">Passes</span> <span class="pre">channel</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">first</span> <span class="pre">value</span> <span class="pre">to</span> <span class="pre">coroutine</span> <span class="pre">and</span> <span class="pre">returns</span> <span class="pre">that</span> <span class="pre">channel.</span>
+<span class="pre">`</span></code>
+Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@as_chan</span>
+<span class="k">def</span> <span class="nf">thermo</span><span class="p">(</span><span class="n">chan</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">chan</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">convert</span><span class="p">(</span><span class="n">thermo_get</span><span class="p">(),</span> <span class="n">unit</span><span class="p">))</span>
+
+<span class="nd">@coroutine</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">thermo_chan</span> <span class="o">=</span> <span class="n">thermo</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">((</span><span class="k">yield</span> <span class="n">thermo_chan</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span>  <span class="c1"># prints current temperature</span>
+</pre></div>
 </div>
-</div>
-<div class="section" id="getting-asg-to">
-<h2>Getting ASG to<a class="headerlink" href="#getting-asg-to" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">param create_chan</dt>
+<dd class="field-odd"><p>Type of channel.</p>
+</dd>
+<dt class="field-even">type create_chan</dt>
+<dd class="field-even"><p>type[Channel]</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p>Created coroutine.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -177,10 +197,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="input-output.html" class="btn btn-neutral float-right" title="Input/Output Verification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="mapping.html" class="btn btn-neutral float-left" title="Mapping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="testing.html" class="btn btn-neutral float-left" title="UI Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
