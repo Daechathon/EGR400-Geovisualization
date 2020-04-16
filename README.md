@@ -4,7 +4,7 @@ set up process in order to use the program and show you how to implement geovisu
 
 
 ## Description
-This program is designed to allow users to develop interactive maps that utilize shapefiles in order to plot points and import data sets that will change the visual appearance of the map you are uploading 
+This program is designed to allow users to develop interactive maps that utilize shapefiles in order to plot points and import data sets that will change the visual appearance of the map you are uploading. 
 
 
 ## Table of Contents
