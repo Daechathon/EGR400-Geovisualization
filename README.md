@@ -54,9 +54,7 @@ This function takes in data sets of various file formats to generate a chlorople
 def generate_map():
     
     # joining paths to begin loading dataframe and datasets
-    state_geo = os.path.join('/Users/jacob/PycharmProjects/geovisualization/data/us_states.json')
+    state_geo = os.path.join('.JSON')
 
-    state_unemployment = os.path.join(
-        '/Users/jacob/Desktop/Spring 2020/Full-Stack Development in '
-        'Python/Geovisualization/datasets/US_Unemployment_Oct2012.csv')
+    state_unemployment = os.path.join('.CSV')
 ```
