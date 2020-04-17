@@ -21,7 +21,7 @@ These instructions will show you how to produce a copy of the project while also
 1. Install the latest version of Anaconda with Python
 or
 2. Pip install and run Pandas in Python
-> pip install pandas
+   > pip install pandas
 
 
 ### Installing
