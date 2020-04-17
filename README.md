@@ -9,8 +9,8 @@ This program is designed to allow users to develop interactive chloropleth maps 
 
 ## Table of Contents
 1. Getting Started
-   - [Prerequistites](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
-   - [Installation](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#installing)
+   - [Prerequistite Installation](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
+   - [Coding](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
    - ...
 
 
@@ -32,7 +32,7 @@ These instructions will show you how to produce a copy of the project while also
    > $ conda install -c conda-forge folium
 
 
-### [Example]
+### Coding
 A step by step series of examples that tell you how to get a Geovisualization program running
 > pip install [example]
 
