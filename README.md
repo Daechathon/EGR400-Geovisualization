@@ -24,6 +24,7 @@ or
    > $ pip install pandas
 3. Pip Install Folium
    > $ pip install folium
+   
    or
    
    > $ conda install -c conda-forge folium
