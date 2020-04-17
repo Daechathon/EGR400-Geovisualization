@@ -9,8 +9,8 @@ This program is designed to allow users to develop interactive chloropleth maps 
 
 ## Table of Contents
 1. Getting Started
-   - *Prerequisites* [Prerequistites Link](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisites)
-   - *Installation* [Link](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#installing)
+   - [*Prerequistites*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite)
+   - [*Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#installing)
    - ...
 
 
@@ -18,13 +18,13 @@ This program is designed to allow users to develop interactive chloropleth maps 
 These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes. See **deployment** for notes on how to deploy the project on a live system.
 
 ### Prerequisite Installation
-1. Download and Install the latest version of Anaconda with Python\
+1. Download and Install the latest version of [Anaconda](https://www.anaconda.com/distribution/) with Python\
    or
 
 
 2. Pip install and run Pandas in Python
    > $ pip install pandas
-3. Pip Install Folium
+3. Pip Install [Folium](https://pypi.org/project/folium/)
    > $ pip install folium
    
    or
