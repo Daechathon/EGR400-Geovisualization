@@ -9,13 +9,13 @@ This program is designed to allow users to develop interactive chloropleth maps 
 
 ## Table of Contents
 1. Getting Started
-   - [Prerequistite Installation](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
-   - [Coding](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
+   - [*Prerequistite Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
+   - [*Coding*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
    - ...
 
 
 ## Getting Started
-These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes. See **deployment** for notes on how to deploy the project on a live system.
+These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes. See [**deployment**] for notes on how to deploy the project on a live system.
 
 ### Prerequisite Installation
 1. Download and Install the latest version of [Anaconda](https://www.anaconda.com/distribution/) with Python\
