@@ -9,8 +9,8 @@ This program is designed to allow users to develop interactive chloropleth maps 
 
 ## Table of Contents
 1. Getting Started
-   - [*Prerequistites*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite)
-   - [*Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#installing)
+   - [Prerequistites](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite)
+   - [Installation](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#installing)
    - ...
 
 
