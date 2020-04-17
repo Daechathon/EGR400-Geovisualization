@@ -17,22 +17,42 @@ This program is designed to allow users to develop interactive chloropleth maps 
 ## Getting Started
 These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes. See **deployment** for notes on how to deploy the project on a live system.
 
-### Prerequisites
-1. Install the latest version of Anaconda with Python
+### Prerequisite Installation
+1. Download and Install the latest version of Anaconda with Python
 or
 2. Pip install and run Pandas in Python
-   > pip install pandas
+   > $ pip install pandas
+3. Pip Install Folium
+   > $ pip install folium
+   or
+   > $ conda install -c conda-forge folium
 
 
-### Installing
+### [Example]
 A step by step series of examples that tell you how to get a Geovisualization program running
 > pip install [example]
 
 and then
 > [another example]
 
+### Example Code: Import
+To begin writing your file...
 ```
 # code block
 import pandas as pd
 import folium as f
 import os
+```
+### Example Code: Map Generation
+This function takes in data sets of various file formats to generate a chloropleth map and plot the given data
+```
+# code block
+def generate_map():
+    
+    # joining paths to begin loading dataframe and datasets
+    state_geo = os.path.join('/Users/jacob/PycharmProjects/geovisualization/data/us_states.json')
+
+    state_unemployment = os.path.join(
+        '/Users/jacob/Desktop/Spring 2020/Full-Stack Development in '
+        'Python/Geovisualization/datasets/US_Unemployment_Oct2012.csv')
+```
