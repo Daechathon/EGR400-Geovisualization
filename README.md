@@ -1,4 +1,4 @@
-# Geovisualization-documentation
+# Geovisualization Documentation
 Welcome to the introduction of **Asyncing Ship's Geovisualization program**. This documentation will help you get started with the\
 set up process in order to use the program and show you how to implement geovisualization tools so that you can plot maps of different geographic regions and areas.
 
