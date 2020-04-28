@@ -14,7 +14,7 @@ This program was designed to allow users to develop interactive chloropleth maps
 1. [Getting Started](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#getting-started)
    - [*Prerequistite Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
    - [*Coding*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
-   - [Input/Output Verification](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#input/ouput-verification)
+   - [Input/Output Verification](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#inputouput-verification)
    - [UI Support](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
    - [Contributors](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#contributors)
 
@@ -59,7 +59,7 @@ and then
  [another example]
 ```
 
-### Example Code: Files to Import
+__Example Code: Files to Import__
 To begin writing your file...
 
 ```
@@ -68,7 +68,7 @@ import pandas as pd
 import folium as f
 import os
 ```
-### Example Code: Map Generation
+__Example Code: Map Generation__
 This function takes in data sets of various file formats to generate a chloropleth map and plot the given data
 ```
 # code block
