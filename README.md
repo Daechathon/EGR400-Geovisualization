@@ -5,6 +5,10 @@ Welcome to the introduction guide to **Asyncing Ship's Geovisualization program*
 ## Description
 This program is designed to allow users to develop interactive chloropleth maps that utilize text files like CSV, JSON, XML, etc in order to plot points and import data sets that will change the visual appearance of the map they are creating. The program enables users to load in two different files: 1. The data file that will generate the map & 2. The data file that is to be plotted. Once these files are uploaded within the construct users can initialize their maps with a starting location, zoom values, as well as parameters that entail what geographic data is going to be used, the name of the map, legends, etc.
 
+### Examples
+<p align="center">
+  <img src="./scenarios/media/cv_overview.jpg" height="350"/>
+</p>
 
 ## Table of Contents
 1. [Getting Started](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#getting-started)
