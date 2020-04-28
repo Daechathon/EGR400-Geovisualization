@@ -16,7 +16,9 @@ This program is designed to allow users to develop interactive chloropleth maps 
 ## Getting Started
 These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes. See [**deployment**] for notes on how to deploy the project on a live system.
 
-### Requirements
+### System Requirements 
+
+__Requirements__
 *
 
 ### Prerequisite Installation
