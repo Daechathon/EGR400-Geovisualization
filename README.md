@@ -50,6 +50,8 @@ __Requirements__
 > NOTE: For non-Windows you can easily install a python package manager, like pip, through Homebrew or use the apt-get command if you are using Linux
 
 ### Coding
+
+__Coding Your Project__
 A step by step series of examples that tell you how to get a Geovisualization program running
 ```
  pip install [example]
@@ -60,7 +62,8 @@ and then
 ```
 
 __Example Code: Files to Import__
-To begin writing your file...
+
+To begin writing your file first import Pandas and Folium
 
 ```
 # code block
@@ -69,6 +72,7 @@ import folium as f
 import os
 ```
 __Example Code: Map Generation__
+
 This function takes in data sets of various file formats to generate a chloropleth map and plot the given data
 ```
 # code block
@@ -81,6 +85,10 @@ def generate_map():
 ```
 
 ## Input/Output Verification
+
+### Build Status
+
+__Testing__
 
 
 ## UI Support
