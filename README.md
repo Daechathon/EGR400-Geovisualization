@@ -1,6 +1,5 @@
 # Geovisualization Documentation
-Welcome to the introduction of **Asyncing Ship's Geovisualization program**. This documentation will help you get started with the\
-set up process in order to use the program and show you how to implement geovisualization tools so that you can plot maps of different geographic regions and areas.
+Welcome to the introduction guide to **Asyncing Ship's Geovisualization program**. This documentation will help you get started with the set up process in order to use the program and show you how to implement geovisualization tools so that you can plot maps of different geographic regions and areas.
 
 
 ## Description
@@ -17,8 +16,11 @@ This program is designed to allow users to develop interactive chloropleth maps 
 ## Getting Started
 These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes. See [**deployment**] for notes on how to deploy the project on a live system.
 
+### Requirements
+*
+
 ### Prerequisite Installation
-1. Download and Install the latest version of [Anaconda](https://www.anaconda.com/distribution/) with Python\
+1. Download and Install the latest version of [Anaconda](https://www.anaconda.com/distribution/) with Python version >= 3.82.2\
    or
 
 
@@ -39,7 +41,7 @@ A step by step series of examples that tell you how to get a Geovisualization pr
 and then
 > [another example]
 
-### Example Code: Import
+### Example Code: Files to Import
 To begin writing your file...
 ```
 # code block
@@ -58,3 +60,13 @@ def generate_map():
 
     state_unemployment = os.path.join('.CSV')
 ```
+
+
+
+
+## Contributors
+* Brandon-*Testing/Deployment*
+* Cameron-*Design*
+* Chase-*Deployment/Development*
+* Jacob-*Deployment/Development*
+* Micah-*Documentation*
