@@ -19,10 +19,11 @@ These instructions will show you how to produce a copy of the project while also
 ### System Requirements 
 
 __Requirements__
-*
+
+* A machine running Linux or Windows
 
 ### Prerequisite Installation
-1. Download and Install the latest version of [Anaconda](https://www.anaconda.com/distribution/) with Python version >= 3.82.2\
+1. Download and Install the latest version of [Anaconda](https://www.anaconda.com/distribution/) with Python version >= 3.8.2\
    or
 
 
