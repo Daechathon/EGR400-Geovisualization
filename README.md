@@ -19,10 +19,10 @@ This program was designed to allow users to develop interactive chloropleth maps
 1. [Getting Started](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#getting-started)
    - [*Prerequistite Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
    - [*Coding*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
-2. [*Input/Output Verification*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#inputoutput-verification)
-3. [*UI Support*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
-   - [Build Status](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#build-status)
-4. [*Contributors*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#contributors)
+2. [Input/Output Verification](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#inputoutput-verification)
+3. [UI Support](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
+   - [*Build Status*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#build-status)
+4. [Contributors](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#contributors)
 
 
 ## Getting Started
@@ -93,9 +93,11 @@ def generate_map():
 
 ## Input/Output Verification
 
+
 ### Build Status
 
 __Testing__
+
 
 
 ## UI Support
