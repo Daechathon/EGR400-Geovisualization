@@ -29,24 +29,31 @@ __Requirements__
 
 
 2. Pip install and run Pandas in Python
-   > $ pip install pandas
+```
+   $ pip install pandas
+```
 3. Pip Install [Folium](https://pypi.org/project/folium/)
+```
    > $ pip install folium
-   
+```   
    or
-   
+```   
    > $ conda install -c conda-forge folium
-
+```
 
 ### Coding
 A step by step series of examples that tell you how to get a Geovisualization program running
-> pip install [example]
-
+```
+ pip install [example]
+```
 and then
-> [another example]
+```
+ [another example]
+```
 
 ### Example Code: Files to Import
 To begin writing your file...
+
 ```
 # code block
 import pandas as pd
