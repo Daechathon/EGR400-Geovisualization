@@ -1,6 +1,6 @@
 ```diff
 + April 30: Released v1.0.0 
-+   functionality for image retrieval, object detection,   
++   functionality for image retrieval, object detection   
 ```
 
 # Geovisualization Documentation
