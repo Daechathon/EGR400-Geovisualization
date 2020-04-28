@@ -14,7 +14,9 @@ This program is designed to allow users to develop interactive chloropleth maps 
 1. [Getting Started](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#getting-started)
    - [*Prerequistite Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
    - [*Coding*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
-   - ...
+   - [Input/Output Verification](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#input/ouput-verification)
+   - [UI Support](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
+   - [Contributors](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#contributors)
 
 
 ## Getting Started
@@ -45,7 +47,7 @@ __Requirements__
    $ conda install -c conda-forge folium
 ```
 > NOTE: For Windows users it is suggested that you use Anaconda
-> NOTE: For non-Windows you easily install a python package manager like pip through Homebrew or use the apt-get command if you are using Linux
+> NOTE: For non-Windows you can easily install a python package manager, like pip, through Homebrew or use the apt-get command if you are using Linux
 
 ### Coding
 A step by step series of examples that tell you how to get a Geovisualization program running
@@ -78,6 +80,10 @@ def generate_map():
     state_unemployment = os.path.join('.CSV')
 ```
 
+## Input/Output Verification
+
+
+## UI Support
 
 
 
