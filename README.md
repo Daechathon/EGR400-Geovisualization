@@ -78,6 +78,7 @@ dataset1_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/us_
 dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/covid-19_cases.json'
 ```
 > NOTE: The application currently takes in .csv and .json files (Examples can be found [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/Datasets))
+
 > NOTE: Only takes two columns or keys with data
 
 
