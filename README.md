@@ -67,7 +67,7 @@ A step by step series of examples that tell you how to get a Geovisualization pr
 # provide absolute paths for GeoJSON from local machine
 json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_states.json'
 ```
-> NOTE: An example of these file types can be located [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/GeoJSON)
+> NOTE: An example of this file type can be located [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/GeoJSON)
 
 2. Upload the data sets you want to map from various file types
 
