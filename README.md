@@ -1,3 +1,5 @@
+<img src="images/tenor.gif" align="right" alt="" width="300"/>
+
 ```diff
 + April 30: Released v1.0.0 with
 +   functionality for image geovisualization, data plotting   
