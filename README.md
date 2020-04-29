@@ -116,7 +116,7 @@ This reads in the file type
         data_read = pd.read_json(data_path)
 ```
 
-Here lies the visual aspect of you generate map, which gives it showcases you data through color and layout plotting
+Here lies the visual aspect within your generated map, which showcases your inputted data by color and layout plotting
 ```
 # code block
     m = f.Map(location=[37, -102], zoom_start=5)
