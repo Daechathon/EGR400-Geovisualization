@@ -77,7 +77,7 @@ dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/cov
 > NOTE: Only takes two columns or keys with data
 
 3. Upon running the application it will then generate your desired map with plotted data for spatial vectors and statistical data
-**See "Example Code 'Map Generation' "**
+**See Example Code "Map Generation"**
 > NOTE: Generates an html which displays the user's map of choice
 
 4. Map is saved to HTML
