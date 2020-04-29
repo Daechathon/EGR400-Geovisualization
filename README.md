@@ -1,4 +1,4 @@
-<img src="images/tenor.gif" align="right" alt="" width="250"/>
+<img src="images/tenor.gif" align="right" alt="" width="225"/>
 
 ```diff
 + April 30: Released v1.0.0 with
