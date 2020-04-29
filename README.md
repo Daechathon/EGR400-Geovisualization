@@ -1,5 +1,5 @@
 ```diff
-+ April 30: Released v1.0.0 
++ April 30: Released v1.0.0 with
 +   functionality for image geovisualization, data plotting   
 ```
 
