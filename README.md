@@ -16,8 +16,8 @@ This program was designed to allow users to develop interactive chloropleth maps
    - [*Prerequistite Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
    - [*Coding*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
 2. [Input/Output Verification](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#inputoutput-verification)
-   - [*Build Status*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#build-status)
    - [*Examples*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#examples)
+   - [*Build Status*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#build-status)
 3. [UI Support](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
 4. [Contributors](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#contributors)
 
@@ -77,7 +77,7 @@ dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/cov
 > NOTE: Only takes two columns or keys with data
 
 3. Upon running the application it will then generate your desired map with plotted data for spatial vectors and statistical data
-**See "Example Code Generation"**
+**See "Example Code 'Map Generation' "**
 > NOTE: Generates an html which displays the user's map of choice
 
 4. Map is saved to HTML
