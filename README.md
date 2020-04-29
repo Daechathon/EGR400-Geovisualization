@@ -1,6 +1,6 @@
 ```diff
 + April 30: Released v1.0.0 
-+   functionality for image retrieval, object detection   
++   functionality for image geovisualization, data plotting   
 ```
 
 # Geovisualization Documentation
@@ -116,7 +116,7 @@ This reads in the file type
         data_read = pd.read_json(data_path)
 ```
 
-Here is the visual aspect of you generate map, which gives it its the color and layout
+Here lies the visual aspect of you generate map, which gives it showcases you data through color and layout plotting
 ```
 # code block
     m = f.Map(location=[37, -102], zoom_start=5)
