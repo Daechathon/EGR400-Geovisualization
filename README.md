@@ -10,23 +10,20 @@ Welcome to the introduction guide to **Asyncing Ship's Geovisualization program*
 ## Description
 This program was designed to allow users to develop interactive chloropleth maps that utilize text files like CSV, JSON, XML, etc in order to plot points and import data sets that will change the visual appearance of the map they are creating. The program enables users to load in two different files: 1. The data file that will generate the map & 2. The data file that is to be plotted. Once these files are uploaded within the construct users can initialize their maps with a starting location, zoom values, as well as parameters that entail what geographic data is going to be used, the name of the map, legends, etc.
 
-### Examples
-<p align="center">
-  <img src="" height="350"/>
-</p>
 
 ## Table of Contents
 1. [Getting Started](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#getting-started)
    - [*Prerequistite Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
    - [*Coding*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
 2. [Input/Output Verification](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#inputoutput-verification)
-3. [UI Support](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
    - [*Build Status*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#build-status)
+   - [*Examples*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#examples)
+3. [UI Support](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
 4. [Contributors](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#contributors)
 
 
 ## Getting Started
-These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes. See [**deployment**] for notes on how to deploy the project on a live system.
+These instructions will show you how to produce a copy of the project while also getting it up and running on your local machine for development and testing purposes.
 
 ### System Requirements 
 
@@ -45,6 +42,7 @@ __Requirements__
    $ pip install pandas
 ```
 2. Pip Install [Folium](https://pypi.org/project/folium/)
+> NOTE:
 ```
    $ pip install folium
 ```   
@@ -61,13 +59,29 @@ __Requirements__
 __Coding Your Project__
 
 A step by step series of examples that tell you how to get a Geovisualization program running
+
+1. Upload your map using a GeoJSON format
+
 ```
- pip install [example]
+# provide absolute paths for GeoJSON from local machine
+json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_states.json'
 ```
-and then
+2. Upload the datasets you want to map from various file types
+
 ```
- [another example]
+# provide absolute paths for dataset from local machine
+dataset1_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/us_death_rates.csv'
+dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/covid-19_cases.json'
 ```
+> NOTE: The application currently takes in .csv and .json files
+> NOTE: Only takes two columns or keys with data
+
+3. Upon running the application it will then generate your desired map with plotted data for spatial vectors and statistical data
+**See "Example Code Generation"**
+> NOTE: Generates an html which displays the user's map of choice
+
+4. Map is saved to HTML
+> NOTE: Could also generate in browser with localhost
 
 __Example Code: Files to Import__
 
@@ -78,22 +92,56 @@ To begin writing your file first import Pandas and Folium
 import pandas as pd
 import folium as f
 import os
+import pathlib
 ```
 __Example Code: Map Generation__
 
-This function takes in data sets of various file formats to generate a chloropleth map and plot the given data
+
+This function takes in data sets of various file formats (.CSV & .JSON) to generate a chloropleth map and plot the given data
 ```
 # code block
-def generate_map():
-    
-    # joining paths to begin loading dataframe and datasets
-    state_geo = os.path.join('.JSON')
+def generate_map(geo_file, data_file, col, color, legend, html):
+    geo_path = os.path.join(geo_file)
+    data_path = os.path.join(data_file)
+```
+> NOTE: "geo_file" & "data_file" are the spaces where your .csv and .json files are placed
 
-    state_unemployment = os.path.join('.CSV')
+This reads in the file type 
+```
+# code block
+    ext = pathlib.Path(data_path).suffix
+    if ext == ".csv":
+        data_read = pd.read_csv(data_path)
+    elif ext == ".json":
+        data_read = pd.read_json(data_path)
+```
+
+Here is the visual aspect of you generate map, which gives it its the color and layout
+```
+# code block
+    m = f.Map(location=[37, -102], zoom_start=5)
+
+    # Add the color for the chloropleth:
+    m.choropleth(
+        geo_data=geo_path,
+        name='choropleth',
+        data=data_read,
+        columns=col,
+        key_on='feature.id',
+        fill_color=color,
+        fill_opacity=0.7,
+        line_opacity=0.2,
+        legend_name=legend
+    )
+    f.LayerControl().add_to(m)
 ```
 
 ## Input/Output Verification
 
+### Examples
+<p align="center">
+  <img src="" height="350"/>
+</p>
 
 ### Build Status
 
