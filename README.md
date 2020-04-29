@@ -66,7 +66,7 @@ A step by step series of examples that tell you how to get a Geovisualization pr
 # provide absolute paths for GeoJSON from local machine
 json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_states.json'
 ```
-2. Upload the datasets you want to map from various file types
+2. Upload the data sets you want to map from various file types
 
 ```
 # provide absolute paths for dataset from local machine
