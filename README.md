@@ -141,6 +141,9 @@ Here lies the visual aspect within your generated map, which showcases your inpu
 ## Input/Output Verification
 
 ### Examples
+
+<img src="images/US%20map%20example.png" width"100"
+
 ![](images/US%20map%20example.png)
 
 ### Build Status
