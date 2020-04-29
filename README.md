@@ -68,7 +68,7 @@ A step by step series of examples that tell you how to get a Geovisualization pr
 # provide absolute paths for GeoJSON from local machine
 json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_states.json'
 ```
-> NOTE: An example of these file types can be located [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data)
+> NOTE: An example of these file types can be located [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/GeoJSON)
 
 2. Upload the data sets you want to map from various file types
 
@@ -77,8 +77,9 @@ json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_state
 dataset1_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/us_death_rates.csv'
 dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/covid-19_cases.json'
 ```
-> NOTE: The application currently takes in .csv and .json files
+> NOTE: The application currently takes in .csv and .json files (examples [here](
 > NOTE: Only takes two columns or keys with data
+
 
 3. Upon running the application it will then generate your desired map with plotted data for spatial vectors and statistical data
 **See Example Code "Map Generation"**
