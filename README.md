@@ -142,7 +142,7 @@ Here lies the visual aspect within your generated map, which showcases your inpu
 
 ### Examples
 
-<img src="images/US%20map%20example.png" width"100"
+<img src="images/US%20map%20example.png" width"100">
 
 ![](images/US%20map%20example.png)
 
