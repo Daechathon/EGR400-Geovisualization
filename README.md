@@ -84,10 +84,10 @@ dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/cov
 4. Map is saved to HTML
 > NOTE: Could also generate in browser with localhost
 
+
 __Example Code: Files to Import__
 
 To begin writing your file first import Pandas and Folium
-
 ```
 # code block
 import pandas as pd
@@ -95,8 +95,8 @@ import folium as f
 import os
 import pathlib
 ```
-__Example Code: Map Generation__
 
+__Example Code: Map Generation__
 
 This function takes in the data sets of various file formats (in this case .CSV & .JSON) to generate a chloropleth map and plot the given data
 ```
@@ -136,6 +136,7 @@ Here lies the visual aspect within your generated map, which showcases your inpu
     )
     f.LayerControl().add_to(m)
 ```
+
 
 ## Input/Output Verification
 
