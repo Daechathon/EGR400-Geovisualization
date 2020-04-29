@@ -141,7 +141,7 @@ Here lies the visual aspect within your generated map, which showcases your inpu
 ## Input/Output Verification
 
 ### Examples
-![Image]()
+![Image](images/US20%map20%example.png)
 
 ### Build Status
 
