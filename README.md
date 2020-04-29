@@ -48,7 +48,8 @@ __Requirements__
    $ pip install pandas
 ```
 2. Pip Install [Folium](https://pypi.org/project/folium/)
-> NOTE:
+
+> NOTE: Folium is Python library that helps create several types of Leaflet maps
 ```
    $ pip install folium
 ```   
