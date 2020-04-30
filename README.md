@@ -179,14 +179,16 @@ Here lies the visual aspect within your generated map, which showcases your inpu
 ### Examples Input/Output
 
 __Testing__
+<p align="left">
+<img src="images/webpage.png" align="center" alt="" width="600"/>
+</p>
 
-
+<p align="left">
+<img src="images/Pink%20Map.png" align="center" alt="" width="600"/>
+</p>
 
 ## UI Support
-The generated chloropleth map you have created will appear and is opened through a new tab that holds the HTML file
-
-__Examples__
-
+The generated chloropleth map you have created will appear and is opened through a new tab that holds the HTML file displaying the map
 
 ## Contributors
 * Brandon Aldridge-*Testing/Deployment*
