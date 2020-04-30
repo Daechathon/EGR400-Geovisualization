@@ -66,7 +66,7 @@ __Requirements__
    ```   
    $ conda install -c conda-forge folium
    ```
-3. Pip Install [Flask API]
+3. Pip Install [Flask API](https://www.flaskapi.org/)
 
    ```
    $ pip install Flask-API
