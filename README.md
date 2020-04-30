@@ -39,6 +39,7 @@ __Requirements__
 * A machine running Linux or Windows
 * Anaconda with Python version >= 3.8.2
 * Folium package
+> NOTE: Folium is Python library that helps create several types of Leaflet maps
 
 ### Prerequisite Installation
 1. Download and Install the latest version of [Anaconda](https://www.anaconda.com/distribution/) with Python >= 3.8.2
@@ -51,15 +52,13 @@ __Requirements__
    ```
 2. Pip Install [Folium](https://pypi.org/project/folium/)
 
-> NOTE: Folium is Python library that helps create several types of Leaflet maps
-
-```
-$ pip install folium
-```   
-or
-```   
-$ conda install -c conda-forge folium
-```
+   ```
+   $ pip install folium
+   ```   
+   or
+   ```   
+   $ conda install -c conda-forge folium
+   ```
       
 > NOTE: For Windows users it is suggested that you use Anaconda
 
