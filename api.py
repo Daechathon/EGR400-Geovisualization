@@ -32,17 +32,17 @@ def allowed_file(filename):
 
 @app.route('/generateMap', methods=['GET', 'POST'])
 def upload_file():
-    try:
+    # try:
         os.makedirs(os.path.abspath(MAP_FOLDER), exist_ok=True)
         os.makedirs(os.path.abspath(DATA_FOLDER), exist_ok=True)
         if request.method == 'POST':
             # check if the post request has the file par
-            map_file = escape(request.files['mapfile'])
-            data_file = escape(request.files['datafile'])
-            map_name = escape(request.form.get('mapname'))
-            legend_name = escape(request.form.get('legendname'))
-            color = escape(request.form.get('color'))
-            if map_file.filename == "" or data_file.filename == "" or map_name != '' or legend_name != '':
+            map_file = request.files['mapfile']
+            data_file = request.files['datafile']
+            map_name = str(request.form.get('mapname'))
+            legend_name = str(escape(request.form.get('legendname')))
+            color = str(escape(request.form.get('color')))
+            if map_file.filename == "" or data_file.filename == "" or map_name == '' or legend_name == '':
                 flash('No file part')
                 return redirect(url_for('home'))
 
@@ -81,8 +81,8 @@ def upload_file():
                 return render_template(m.generate_map(geo_file=map_path, data_file=data_path, color=color,
                                                       col=col.to_list(), html=map_name + '.html', legend=legend_name))
             return redirect(url_for('home'))
-    finally:
-        return redirect(url_for('home'))
+    # finally:
+    #     return redirect(url_for('home'))
 
 
 app.run()

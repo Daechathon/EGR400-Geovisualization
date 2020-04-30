@@ -1,4 +1,4 @@
-/.idea/
-/__pycache__/
-/templates/
+.idea/
+__pycache__/
+templates/
 !./templates/home.html
