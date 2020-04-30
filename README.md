@@ -127,6 +127,7 @@ This function takes in the data sets of various file formats to generate a chlor
    def generate_map(geo_file, data_file, col, color, legend, html):
        geo_path = os.path.join(geo_file)
        data_path = os.path.join(data_file)
+       data_read = ''
    ```
 > NOTE: "geo_file" & "data_file" are the spaces where your .csv and .json files are placed
 
