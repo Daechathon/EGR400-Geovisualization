@@ -45,19 +45,19 @@ __Requirements__
    or
 
    Pip install and run Pandas in Python
-```
+   ```
    $ pip install pandas
-```
+   ```
 2. Pip Install [Folium](https://pypi.org/project/folium/)
 
 > NOTE: Folium is Python library that helps create several types of Leaflet maps
-```
+   ```
    $ pip install folium
-```   
+   ```   
    or
-```   
+   ```   
    $ conda install -c conda-forge folium
-```
+   ```
 > NOTE: For Windows users it is suggested that you use Anaconda
 
 > NOTE: For non-Windows you can easily install a python package manager, like pip, through Homebrew or use the apt-get command if you are using Linux
@@ -70,19 +70,19 @@ A step by step series of examples that tell you how to get a Geovisualization pr
 
 1. Upload your map using a GeoJSON format
 
-```
-# provide absolute paths for GeoJSON from local machine
-json_path = '../data/GeoJSON/us_states.json'
-```
+   ```
+   # provide absolute paths for GeoJSON from local machine
+   json_path = '../data/GeoJSON/us_states.json'
+   ```
 > NOTE: An example of this file type can be located [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/GeoJSON)
 
 2. Upload the data sets you want to map from various file types
 
-```
-# provide absolute paths for dataset from local machine
-dataset1_path = '../data/Datasets/us_death_rates.csv'
-dataset2_path = '../data/Datasets/covid-19_cases.json'
-```
+   ```
+   # provide absolute paths for dataset from local machine
+   dataset1_path = '../data/Datasets/us_death_rates.csv'
+   dataset2_path = '../data/Datasets/covid-19_cases.json'
+   ```
 > NOTE: The application currently takes in .csv and .json files (Examples can be found [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/Datasets))
 
 > NOTE: Only takes two columns or keys with data
@@ -94,69 +94,69 @@ dataset2_path = '../data/Datasets/covid-19_cases.json'
 
 4. Map is saved to HTML
 
-```
-# code block
-# Save to html
+   ```
+   # code block
+   # Save to html
     m.save(html)
     first_path = os.path.abspath('./' + html)
     new_path = os.path.abspath('./templates/')
     shutil.move(first_path, new_path + '/' + html)
-```
+   ```
 > NOTE: Could also be generated in browser with localhost
 
 
 __Example Code: Files to Import__
 
 To begin writing your file first import Pandas and Folium
-```
-# code block
-import pandas as pd
-import folium as f
-import os
-import pathlib
-import shutil
-```
+   ```
+   # code block
+   import pandas as pd
+   import folium as f
+   import os
+   import pathlib
+   import shutil
+   ```
 
 __Example Code: Map Generation__
 
 This function takes in the data sets of various file formats (in this case .CSV & .JSON) to generate a chloropleth map and plot the given data
-```
-# code block
-def generate_map(geo_file, data_file, col, color, legend, html):
-    geo_path = os.path.join(geo_file)
-    data_path = os.path.join(data_file)
-```
+   ```
+   # code block
+   def generate_map(geo_file, data_file, col, color, legend, html):
+       geo_path = os.path.join(geo_file)
+       data_path = os.path.join(data_file)
+   ```
 > NOTE: "geo_file" & "data_file" are the spaces where your .csv and .json files are placed
 
 This reads in the file type 
-```
-# code block
-    ext = pathlib.Path(data_path).suffix
-    if ext == ".csv":
-        data_read = pd.read_csv(data_path)
-    elif ext == ".json":
-        data_read = pd.read_json(data_path)
-```
+   ```
+   # code block
+       ext = pathlib.Path(data_path).suffix
+       if ext == ".csv":
+           data_read = pd.read_csv(data_path)
+       elif ext == ".json":
+           data_read = pd.read_json(data_path)
+   ```
 
 Here lies the visual aspect within your generated map, which showcases your inputted data by color and layout plotting
-```
-# code block
-    m = f.Map(location=[37, -102], zoom_start=5)
+   ```
+   # code block
+       m = f.Map(location=[37, -102], zoom_start=5)
 
-    # Add the color for the chloropleth:
-    m.choropleth(
-        geo_data=geo_path,
-        name='choropleth',
-        data=data_read,
-        columns=col,
-        key_on='feature.id',
-        fill_color=color,
-        fill_opacity=0.7,
-        line_opacity=0.2,
-        legend_name=legend
-    )
-    f.LayerControl().add_to(m)
-```
+       # Add the color for the chloropleth:
+       m.choropleth(
+           geo_data=geo_path,
+           name='choropleth',
+           data=data_read,
+           columns=col,
+           key_on='feature.id',
+           fill_color=color,
+           fill_opacity=0.7,
+           line_opacity=0.2,
+           legend_name=legend
+       )
+       f.LayerControl().add_to(m)
+   ```
 
 
 ## Input/Output Verification
