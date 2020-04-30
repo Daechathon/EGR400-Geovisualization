@@ -17,9 +17,11 @@ This program was designed to allow users to develop interactive chloropleth maps
 <img src="images/US%20map%20example.png" align="center" alt="" width="700"/>
 </p>
 
-## Tools & Technologies:  PyCharm, mongoDB, Docker, Flask, Folium & Leaflet.js
+### Tools & Technologies:  
+PyCharm, mongoDB, Docker, Flask, Folium & Leaflet.js
 
-## Programming Languages: Python, Node.js
+### Programming Languages:
+Python, Node.js
 
 
 ## Table of Contents
