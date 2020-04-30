@@ -1,9 +1,7 @@
-import app.map as m
-import os
-import shutil
+import map as m
 
 # provide absolute paths for GeoJSON and dataset from local machine
-json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_states.json'
+json_path = '/data/GeoJSON/us_states.json'
 dataset1_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/us_death_rates.csv'
 dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/covid-19_cases.json'
 

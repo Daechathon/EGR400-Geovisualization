@@ -8,6 +8,7 @@ import shutil
 def generate_map(geo_file, data_file, col, color, legend, html):
     geo_path = os.path.join(geo_file)
     data_path = os.path.join(data_file)
+    data_read = ''
 
     ext = pathlib.Path(data_path).suffix
     if ext == ".csv":

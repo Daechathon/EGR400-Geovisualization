@@ -1,48 +1,23 @@
 import flask
-import webbrowser
 import os
 from werkzeug.utils import secure_filename
-import app.map as m
-from flask import app, jsonify, request, render_template, flash, redirect, url_for
+import map as m
+from flask import app, request, render_template, flash, redirect, url_for
 
-UPLOAD_FOLDER = './data'
+MAP_FOLDER = './data/GeoJSON'
+DATA_FOLDER = './data/Datasets'
 ALLOWED_EXTENSIONS = {'csv', 'json'}
 
 app = flask.Flask(__name__)
 app.config['DEBUG'] = True
-
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SECRET_KEY'] = 'I have a dream'
+app.config['GeoJSON'] = MAP_FOLDER
+app.config['Datasets'] = DATA_FOLDER
 
 
 @app.route('/', methods=['GET'])
 def home():
     return '''<h1>Home</h1>'''
-
-
-@app.route('/api/v1/data1', methods=['GET'])
-def dataset1():
-    return render_template('')
-
-
-@app.route('/api/v1/data2', methods=['GET', 'POST'])
-def dataset2():
-    # Upload the dataset and the map files
-    # Put them into their respective folders
-    # generate map using new values
-    json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_states.json'
-    dataset1_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/us_death_rates.csv'
-    dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/covid-19_cases.json'
-
-    # 'BuGn', 'BuPu', 'GnBu', 'OrRd', 'PuBu', 'PuBuGn', 'PuRd', 'RdPu', 'YlGn', 'YlGnBu', 'YlOrBr', and 'YlOrRd'
-
-    m.generate_map(geo_file=json_path, data_file=dataset1_path, col=['State', 'Deaths'], color='GnBu',
-                   legend='Total Count (min - max)', html='US Death Rates.html')
-    # set path for html file to be in templates folder
-
-    m.generate_map(geo_file=json_path, data_file=dataset2_path, col=['State', 'Cases'], color='PuRd',
-                   legend='Total Count (min - max)', html='US_Covid-19.html')
-
-    return render_template('US_Covid-19.html')
 
 
 def allowed_file(filename):
@@ -58,16 +33,27 @@ def upload_file():
             flash('No file part')
             return redirect(request.url)
 
-        file = request.files['file']
-
+        dataset1 = request.files['file']
+        dataset2 = request.files['file2']
         # if user does not select file, browser also
         # submit an empty part without filename
-        if file.filename == '':
+        if dataset1.filename == '':
             flash('No selected file')
             return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        if dataset1 and allowed_file(dataset1.filename):
+            filename = secure_filename(dataset1.filename)
+            dataset1.save(os.path.join(app.config['GeoJSON'], filename))
+
+        if dataset2.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if dataset2 and allowed_file(dataset2.filename):
+            filename = secure_filename(dataset2.filename)
+            dataset2.save(os.path.join(app.config['Datasets'], filename))
+
+        if dataset1.filename == '' and dataset1 and allowed_file(
+                dataset1.filename) and dataset2.filename == '' and dataset2 and allowed_file(dataset2.filename):
+            filename = secure_filename(dataset2.filename)
             return redirect(url_for('upload_file',
                                     filename=filename))
 
@@ -76,11 +62,28 @@ def upload_file():
         <title>Upload new File</title>
         <h1>Upload new File</h1>
         <form method=post enctype=multipart/form-data>
-          <input type=file name=Dataset>
-          <input type=file name=GeoJSON>
+          <input type=file name=file>
+          <input type=file name=file2>
           <input type=submit value=Upload>
         </form>
         '''
+
+
+# We have uploaded the files, now we need to plug those files in to generate the maps.......
+
+# TODO: Figure out how to read the files when they are passed in from the user so that the maps can be generated
+#  dynamically and with invariant results
+
+@app.route('/api/v1/map', methods=['GET', 'POST'])
+def generate_map():
+    json_path = 'data/GeoJSON/us_states.json'
+    dataset1_path = 'data/Datasets/covid-19_cases.csv'
+
+    m.generate_map(geo_file=json_path, data_file=dataset1_path, col=['State', 'Cases'], color='GnBu',
+                   legend='Total Count (min - max)', html='US-COVID-19.html')
+    # set path for html file to be in templates folder
+
+    return render_template("US-COVID-19.html")
 
 
 app.run()
