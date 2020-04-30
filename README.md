@@ -158,7 +158,9 @@ __Testing__
 
 
 ## UI Support
+The generated chloropleth map you have created will appear and is opened through a new tab that holds the HTML file
 
+__Examples__
 
 
 ## Contributors
