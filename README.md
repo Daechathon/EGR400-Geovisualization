@@ -55,7 +55,7 @@ __Requirements__
       ```
       $ pip install folium
       ```   
-      or
+   or
       ```   
       $ conda install -c conda-forge folium
       ```
