@@ -19,6 +19,8 @@ app.config['Datasets'] = DATA_FOLDER
 
 @app.route('/', methods=['GET'])
 def home():
+    os.makedirs(os.path.abspath(MAP_FOLDER), exist_ok=True)
+    os.makedirs(os.path.abspath(DATA_FOLDER), exist_ok=True)
     return render_template("home.html")
 
 
@@ -27,8 +29,10 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/api/v1/upload', methods=['GET', 'POST'])
+@app.route('/generateMap', methods=['GET', 'POST'])
 def upload_file():
+    os.makedirs("./GeoJSON", exist_ok=True)
+    os.makedirs("./Datasets", exist_ok=True)
     if request.method == 'POST':
         # check if the post request has the file par
         form = request.form

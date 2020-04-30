@@ -4,7 +4,6 @@ import os
 import pathlib
 import shutil
 
-
 def generate_map(geo_file, data_file, col, color, legend, html):
     geo_path = os.path.join(geo_file)
     data_path = os.path.join(data_file)
@@ -37,4 +36,5 @@ def generate_map(geo_file, data_file, col, color, legend, html):
     first_path = os.path.abspath('./' + html)
     new_path = os.path.abspath('./templates/')
     shutil.move(first_path, new_path + '/' + html)
+    return html
 
