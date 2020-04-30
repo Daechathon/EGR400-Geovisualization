@@ -58,6 +58,7 @@ __Requirements__
       ```   
       $ conda install -c conda-forge folium
       ```
+      
 > NOTE: For Windows users it is suggested that you use Anaconda
 
 > NOTE: For non-Windows you can easily install a python package manager, like pip, through Homebrew or use the apt-get command if you are using Linux
