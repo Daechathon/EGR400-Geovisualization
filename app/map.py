@@ -2,6 +2,7 @@ import pandas as pd
 import folium as f
 import os
 import pathlib
+import shutil
 
 
 def generate_map(geo_file, data_file, col, color, legend, html):
@@ -32,6 +33,7 @@ def generate_map(geo_file, data_file, col, color, legend, html):
 
     # Save to html
     m.save(html)
-# 2. Set up loading the dataset
-# 3. Have user enter the files they want
-# 4. Generate Map with values
+    first_path = os.path.abspath('./' + html)
+    new_path = os.path.abspath('./templates/')
+    shutil.move(first_path, new_path + '/' + html)
+
