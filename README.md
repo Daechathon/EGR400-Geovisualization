@@ -45,6 +45,7 @@ __Requirements__
 * A machine running Linux or Windows
 * Anaconda with Python version >= 3.8.2
 * Folium package
+* Flask API
 > NOTE: Folium is Python library that helps create several types of Leaflet maps
 
 ### Prerequisite Installation
@@ -65,7 +66,12 @@ __Requirements__
    ```   
    $ conda install -c conda-forge folium
    ```
-      
+3. Pip Install [Flask API]
+
+   ```
+   $ pip install Flask-API
+   ```
+   
 > NOTE: For Windows users it is suggested that you use Anaconda
 
 > NOTE: For non-Windows you can easily install a python package manager, like pip, through Homebrew or use the apt-get command if you are using Linux
