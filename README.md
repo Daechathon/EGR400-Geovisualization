@@ -121,7 +121,7 @@ To begin writing your file first import Pandas and Folium
 
 __Example Code: Map Generation__
 
-This function takes in the data sets of various file formats (in this case .CSV & .JSON) to generate a chloropleth map and plot the given data
+This function takes in the data sets of various file formats to generate a chloropleth map and plot the given data
    ```
    # code block
    def generate_map(geo_file, data_file, col, color, legend, html):
