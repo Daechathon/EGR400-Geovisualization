@@ -93,7 +93,16 @@ dataset2_path = '../data/Datasets/covid-19_cases.json'
 > NOTE: Generates an html which displays the user's map of choice
 
 4. Map is saved to HTML
-> NOTE: Could also generate in browser with localhost
+
+```
+# code block
+# Save to html
+    m.save(html)
+    first_path = os.path.abspath('./' + html)
+    new_path = os.path.abspath('./templates/')
+    shutil.move(first_path, new_path + '/' + html)
+```
+> NOTE: Could also be generated in browser with localhost
 
 
 __Example Code: Files to Import__
@@ -105,6 +114,7 @@ import pandas as pd
 import folium as f
 import os
 import pathlib
+import shutil
 ```
 
 __Example Code: Map Generation__
