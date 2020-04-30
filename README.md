@@ -51,13 +51,13 @@ __Requirements__
 2. Pip Install [Folium](https://pypi.org/project/folium/)
 
 > NOTE: Folium is Python library that helps create several types of Leaflet maps
-   ```
-   $ pip install folium
-   ```   
+      ```
+      $ pip install folium
+      ```   
    or
-   ```   
-   $ conda install -c conda-forge folium
-   ```
+      ```   
+      $ conda install -c conda-forge folium
+      ```
 > NOTE: For Windows users it is suggested that you use Anaconda
 
 > NOTE: For non-Windows you can easily install a python package manager, like pip, through Homebrew or use the apt-get command if you are using Linux
