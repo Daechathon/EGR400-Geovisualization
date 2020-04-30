@@ -72,7 +72,7 @@ A step by step series of examples that tell you how to get a Geovisualization pr
 
 ```
 # provide absolute paths for GeoJSON from local machine
-json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_states.json'
+json_path = '../data/GeoJSON/us_states.json'
 ```
 > NOTE: An example of this file type can be located [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/GeoJSON)
 
@@ -80,8 +80,8 @@ json_path = '/Users/jacob/PycharmProjects/geovisualization/data/GeoJSON/us_state
 
 ```
 # provide absolute paths for dataset from local machine
-dataset1_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/us_death_rates.csv'
-dataset2_path = '/Users/jacob/PycharmProjects/geovisualization/data/Datasets/covid-19_cases.json'
+dataset1_path = '../data/Datasets/us_death_rates.csv'
+dataset2_path = '../data/Datasets/covid-19_cases.json'
 ```
 > NOTE: The application currently takes in .csv and .json files (Examples can be found [here](https://github.com/Daechathon/EGR400-Geovisualization/tree/Development/data/Datasets))
 
