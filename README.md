@@ -29,6 +29,7 @@ Python, Node.js
    - [*System Requirements*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#system-requirements)
    - [*Prerequistite Installation*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#prerequisite-installation)
    - [*Coding*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#coding)
+   - [*Flask API*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#flask-api)
 2. [Input/Output Verification](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#inputoutput-verification)
    - [*Examples Input/Output*](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#examples-inputoutput)
 3. [UI Support](https://github.com/Daechathon/EGR400-Geovisualization/blob/Documentation/README.md#ui-support)
@@ -115,6 +116,7 @@ A step by step series of examples that tell you how to get a Geovisualization pr
     first_path = os.path.abspath('./' + html)
     new_path = os.path.abspath('./templates/')
     shutil.move(first_path, new_path + '/' + html)
+    return html
    ```
 > NOTE: Could also be generated in browser with localhost
 
@@ -172,7 +174,88 @@ Here lies the visual aspect within your generated map, which showcases your inpu
        )
        f.LayerControl().add_to(m)
    ```
+### Flask API
 
+__Working API: Home Page__
+
+Web application home page 
+   ```
+   # code block
+       @app.route('/', methods=['GET'])
+       def home():
+           os.makedirs(os.path.abspath(MAP_FOLDER), exist_ok=True)
+           os.makedirs(os.path.abspath(DATA_FOLDER), exist_ok=True)
+           return render_template("home.html")
+
+
+       def allowed_file(filename):
+           return '.' in filename and \
+                  filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+   ```
+
+__Working API: Map Generation__
+
+Here we have the beginning of our map generation that allows the program to be made into a online application
+   ```
+   # code block
+       @app.route('/generateMap', methods=['GET', 'POST'])
+       def upload_file():
+           try:
+               os.makedirs(os.path.abspath(MAP_FOLDER), exist_ok=True)
+               os.makedirs(os.path.abspath(DATA_FOLDER), exist_ok=True)
+               if request.method == 'POST':
+                   # check if the post request has the file par
+                   map_file = escape(request.files['mapfile'])
+                   data_file = escape(request.files['datafile'])
+                   map_name = escape(request.form.get('mapname'))
+                   legend_name = escape(request.form.get('legendname'))
+                   color = escape(request.form.get('color'))
+                   if map_file.filename == "" or data_file.filename == "" or map_name != '' or legend_name != '':
+                       flash('No file part')
+                       return redirect(url_for('home'))
+   ```
+This code redirects and requests users to input correct files if they have entered invalid or no file
+   ```
+   # code block
+            # if user does not select file, browser also
+            # submit an empty part without filename
+            if map_file.filename == '':
+                flash('No selected file')
+                return redirect(request.url)
+            if map_file and allowed_file(map_file.filename):
+                file_suffix = pb.Path(map_file.filename).suffix
+                map_file_name = secure_filename(map_name + 'MAP' + file_suffix)
+                map_file.save(os.path.join(app.config['GeoJSON'], map_file_name))
+
+            if data_file.filename == '':
+                flash('No selected file')
+                return redirect(request.url)
+            if data_file and allowed_file(data_file.filename):
+                file_suffix = pb.Path(data_file.filename).suffix
+                data_file_name = secure_filename(map_name + 'DATASET' + file_suffix)
+
+                data_file.save(os.path.join(app.config['Datasets'], data_file_name))
+
+            if map_name != '' and legend_name != '' and color != '' and allowed_file(
+                    map_file.filename) and allowed_file(data_file.filename):
+
+                data_path = os.path.join(app.config['Datasets'], data_file_name)
+                map_path = os.path.join(app.config['GeoJSON'], map_file_name)
+
+                suffix = pb.Path(data_path).suffix
+
+                if suffix == ".csv":
+                    col = pd.read_csv(data_path).count(0).keys()
+                else:
+                    col = pd.read_json(data_path).count(0).keys()
+                return render_template(m.generate_map(geo_file=map_path, data_file=data_path, color=color,
+                                                      col=col.to_list(), html=map_name + '.html', legend=legend_name))
+            return redirect(url_for('home'))
+            
+      app.run() 
+   ```
+   
 
 ## Input/Output Verification
 
