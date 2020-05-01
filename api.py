@@ -5,7 +5,6 @@ import map as m
 from flask import app, request, render_template, flash, redirect, url_for, escape
 import pathlib as pb
 import pandas as pd
-from flask_inputs import Inputs
 
 MAP_FOLDER = './data/GeoJSON'
 DATA_FOLDER = './data/Datasets'
@@ -32,7 +31,7 @@ def allowed_file(filename):
 
 @app.route('/generateMap', methods=['GET', 'POST'])
 def upload_file():
-    # try:
+    try:
         os.makedirs(os.path.abspath(MAP_FOLDER), exist_ok=True)
         os.makedirs(os.path.abspath(DATA_FOLDER), exist_ok=True)
         if request.method == 'POST':
@@ -78,11 +77,16 @@ def upload_file():
                     col = pd.read_csv(data_path).count(0).keys()
                 else:
                     col = pd.read_json(data_path).count(0).keys()
-                return render_template(m.generate_map(geo_file=map_path, data_file=data_path, color=color,
-                                                      col=col.to_list(), html=map_name + '.html', legend=legend_name))
+                html = m.generate_map(geo_file=map_path, data_file=data_path, color=color,
+                                                  col=col.to_list(), html=map_name + '.html', legend=legend_name)
+                html_file = render_template(html)
+                os.remove(map_path)
+                os.remove(data_path)
+                os.remove('templates/' + html)
+                return html_file
             return redirect(url_for('home'))
-    # finally:
-    #     return redirect(url_for('home'))
+    except:
+        return redirect(url_for('home'))
 
 
 app.run()
