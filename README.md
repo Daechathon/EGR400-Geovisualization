@@ -196,7 +196,7 @@ Web application home page
 
 __Working API: Map Generation__
 
-Here we have the beginning of our map generation that allows the program to be made into a online application
+Here we have the beginning of our map generation that allows the program to be made into a online application. Files are put into folders as data is taken in
    ```
    # code block
        @app.route('/generateMap', methods=['GET', 'POST'])
@@ -215,7 +215,7 @@ Here we have the beginning of our map generation that allows the program to be m
                        flash('No file part')
                        return redirect(url_for('home'))
    ```
-This code redirects and requests users to input correct files if they have entered invalid or no file
+This code redirects and requests users to input correct files if they have entered invalid or no file. The program checks the name of files making sure that .json and .csv files are again being loaded correctly.
    ```
    # code block
             # if user does not select file, browser also
