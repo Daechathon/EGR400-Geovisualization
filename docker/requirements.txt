@@ -1,0 +1,8 @@
+flask
+redis
+os
+pandas
+folium
+pathlib
+shutil
+werkzeug
