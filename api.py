@@ -45,7 +45,6 @@ def upload_file():
                 flash('No file part')
                 return redirect(url_for('home'))
 
-
             # if user does not select file, browser also
             # submit an empty part without filename
             if map_file.filename == '':
@@ -78,7 +77,7 @@ def upload_file():
                 else:
                     col = pd.read_json(data_path).count(0).keys()
                 html = m.generate_map(geo_file=map_path, data_file=data_path, color=color,
-                                                  col=col.to_list(), html=map_name + '.html', legend=legend_name)
+                                      col=col.to_list(), html=map_name + '.html', legend=legend_name)
                 html_file = render_template(html)
                 os.remove(map_path)
                 os.remove(data_path)
@@ -87,5 +86,6 @@ def upload_file():
             return redirect(url_for('home'))
     except:
         return redirect(url_for('home'))
+
 
 app.run()
